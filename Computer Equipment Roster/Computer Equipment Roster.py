@@ -17,8 +17,10 @@
 #
 # =======================================================
 import csv
-
+     
 def get_file(csv_file):
+    old_desktop_counter=0
+    old_laptop_counter=0
     with open(csv_file) as f:
         file = csv.reader(f)
         report = list(file)
@@ -38,6 +40,7 @@ def get_file(csv_file):
                 disk2 = row[6]
                 operating_system = row[7]
                 man_year = row[8]
+
             if computer_type == 'D':
                 computer_type = 'Desktop'
             elif computer_type == 'L':
@@ -46,7 +49,19 @@ def get_file(csv_file):
                 computer_brand = 'Dell'
             elif computer_brand == 'GW':
                 computer_brand = 'Gateway'
+            
             print('{:<10}{:<10}{:<5}{:<5}{:<10}{:^10}{:<10}{:^5}{:^5}'.format(computer_type, computer_brand, cpu_type, amount_ram, disk1, num_hdd, disk2, operating_system, man_year))
+
+            if computer_type == 'Desktop' and int(man_year)-20<0:
+                old_desktop_counter+=1
+
+            if computer_type == 'Laptop' and int(man_year)-20<0:
+                old_laptop_counter+=1
+
+        print(f"To replace {old_desktop_counter} desktops it will cost ${old_desktop_counter*2000}")
+        print(f"To replace {old_laptop_counter} laptops it will cost ${old_laptop_counter*1500}")
 
 csv_file = str(input(r"Please enter a file path: "))
 get_file(csv_file)
+
+
