@@ -2,18 +2,20 @@
 # Week 2 Lab 2B
 #
 # Variables Used:
-# file              stores csv file from input into function
-# report            stores organized list of values pulled from csv file
-# computer_type     stores type of computer
-# computer_brand    stores brand of computer
-# cpu_type          stores type of cpu
-# amount_ram        stores the amount of ram
-# disk1             stores size of hdd1
-# num_hdd           stores number of hdd 
-# disk2             stores size of hdd2
-# operating_system  stores type of operating system
-# man_year          stores manufactured year
-# csv_file          stores inputed csv_file to be used in function
+# old_desktop_counter   stores iterations of old desktops
+# old_laptop_counter    stores iterations of old laptops
+# file                  stores csv file from input into function
+# report                stores organized list of values pulled from csv file
+# computer_type         stores type of computer
+# computer_brand        stores brand of computer
+# cpu_type              stores type of cpu
+# amount_ram            stores the amount of ram
+# disk1                 stores size of hdd1
+# num_hdd               stores number of hdd 
+# disk2                 stores size of hdd2
+# operating_system      stores type of operating system
+# man_year              stores manufactured year
+# csv_file              stores inputed csv_file to be used in function
 #
 # =======================================================
 import csv
@@ -50,15 +52,14 @@ def get_file(csv_file):
             elif computer_brand == 'GW':
                 computer_brand = 'Gateway'
             
-            print('{:<10}{:<10}{:<5}{:<5}{:<10}{:^10}{:<10}{:^5}{:^5}'.format(computer_type, computer_brand, cpu_type, amount_ram, disk1, num_hdd, disk2, operating_system, man_year))
-
             if computer_type == 'Desktop' and int(man_year)-20<0:
                 old_desktop_counter+=1
-
-            if computer_type == 'Laptop' and int(man_year)-20<0:
+            elif computer_type == 'Laptop' and int(man_year)-20<0:
                 old_laptop_counter+=1
+            
+            print('{:<10}{:<10}{:<5}{:<5}{:<10}{:^10}{:<10}{:^5}{:^5}'.format(computer_type, computer_brand, cpu_type, amount_ram, disk1, num_hdd, disk2, operating_system, man_year))
 
-        print(f"To replace {old_desktop_counter} desktops it will cost ${old_desktop_counter*2000}")
+        print(f"\nTo replace {old_desktop_counter} desktops it will cost ${old_desktop_counter*2000}")
         print(f"To replace {old_laptop_counter} laptops it will cost ${old_laptop_counter*1500}")
 
 csv_file = str(input(r"Please enter a file path: "))
