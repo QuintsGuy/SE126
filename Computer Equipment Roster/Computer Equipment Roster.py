@@ -19,7 +19,7 @@
 #
 # =======================================================
 import csv
-     
+
 def get_file(csv_file):
     old_desktop_counter=0
     old_laptop_counter=0
