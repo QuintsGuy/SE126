@@ -1,7 +1,10 @@
 # Tristan Knott
-# Week 3 Lab 3B
+# Week 4 Lab 4a
 #
 # Variables Used:
+# option_response       stores inputed response of whether to search by RAM or not
+# look_up               stores input of amount of RAM to search for
+# number_of_computers   stores iterations of computers with greater than inputed amount of RAM
 # old_desktop_counter   stores iterations of old desktops
 # old_laptop_counter    stores iterations of old laptops
 # file                  stores csv file from input into function
@@ -19,6 +22,14 @@
 #
 # ==========================================================================================
 import csv
+
+def find_RAM():
+    number_of_computers=0
+    look_up = int(input("\nEnter an amount of RAM greater than: "))
+    for i in range(0, len(amount_ram)):
+        if int(amount_ram[i]) > look_up:
+            number_of_computers+=1
+    print(f"\nFound it! There are {number_of_computers} computers with greater than 8GB of RAM")
 
 def get_file(csv_file, system_counter):
     old_desktop_counter=0
@@ -81,3 +92,8 @@ system_counter=0
 csv_file = str(input(r"Please enter a file path: "))
 get_file(csv_file, system_counter)
 
+option_response = input("\nWould you like to query the list by amount of RAM? Y/N: ").lower()
+if option_response == 'y':
+    find_RAM()
+else:
+    print("\nGoodbye...")
