@@ -4,7 +4,9 @@ def find_person(first_name, last_name, phone_number, email_address, department, 
     look_up = input("Enter a person's last name: ")
     for i in range(0, len(first_name)):
         if look_up == last_name[i]:
-            print(f"Found it! The person you're looking for is:\n" '{:<15}{:<15}{:<20}{:<30}{:<20}{:<15}'.format(last_name[i], first_name[i], phone_number[i], email_address[i], department[i], position[i]))
+            print(f"Found it! The person you're looking for is:")
+            print('{:<15}{:<15}{:<20}{:<30}{:<20}{:<15}'.format('Last', 'First', 'Phone', 'Email', 'Department', 'Position'))
+            print('{:<15}{:<15}{:<20}{:<30}{:<20}{:<15}'.format(last_name[i], first_name[i], phone_number[i], email_address[i], department[i], position[i]))
 
 def get_file(csv_file):
     with open(csv_file) as f:
