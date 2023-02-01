@@ -1,10 +1,29 @@
+# Tristan Knott
+# Week 4 Lab 4c
+#
+# Variables Used:
+# look_up           stores inputed name converted to lowercase
+# personnel         stores iterations of processed personnel records to accumulate total records
+# file              stores opened csv file
+# report            converts opened csv file into a list
+# size              stores the length of first_name list
+# first_name        list that stores the extracted first names from report
+# last_name         list that stores the extracted last names from report
+# phone_number      list that stores the extracted phone numbers from report
+# email_address     list that stores the extracted email addresses from report
+# department        list that stores the extracted departments from report
+# position          list that stores the extracted positions from report
+# csv_file          stores inputed csv file path after being converted to string
+#
+# ==========================================================================================
+
 import csv
 
 def find_person(first_name, last_name, phone_number, email_address, department, position):
-    look_up = input("Enter a person's last name: ")
+    look_up = input("Enter a person's last name: ").lower()
     for i in range(0, len(first_name)):
-        if look_up == last_name[i]:
-            print(f"Found it! The person you're looking for is:")
+        if look_up == last_name[i].lower():
+            print(f"\nFound it! The person you're looking for is:")
             print('{:<15}{:<15}{:<20}{:<30}{:<20}{:<15}'.format('Last', 'First', 'Phone', 'Email', 'Department', 'Position'))
             print('{:<15}{:<15}{:<20}{:<30}{:<20}{:<15}'.format(last_name[i], first_name[i], phone_number[i], email_address[i], department[i], position[i]))
 
@@ -29,6 +48,18 @@ def get_file(csv_file):
 
         print(f"\nNumber of personnel records processed: {personnel}")
 
+def prompt_locator():
+    check_person=input("\nIs there someone you would like to find? Y/N: ").upper()
+    while check_person==str(check_person):
+        if check_person=="Y":
+            return True
+        elif check_person=="N":
+            print("Goodbye...\n")
+            return False
+        else:
+            print("Invalid input -- try again")
+    print("Invalid input -- try again\n")  
+        
 first_name = []
 last_name = []
 phone_number = []
@@ -39,4 +70,7 @@ position = []
 csv_file = str(input(r"Please enter a file path: "))
 get_file(csv_file)
 
-find_person(first_name, last_name, phone_number, email_address, department, position)
+while prompt_locator()==True:
+    find_person(first_name, last_name, phone_number, email_address, department, position)
+    if prompt_locator() == False:
+        break
