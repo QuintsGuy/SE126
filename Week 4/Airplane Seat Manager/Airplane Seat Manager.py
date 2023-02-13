@@ -18,7 +18,6 @@ def assign_seat(row, col):
       assigned_seats.append((row, col))
       return True
 
-#needs work to return invalid statement when inputing enteries outside range
 def get_seat():
     seat = []
     seat.append(input("\nEnter seat row (ex. 1-7): "))
@@ -30,7 +29,6 @@ def get_seat():
     else:
       print("Invalid seat -- try again\n")
       return None
-    
 
 def assign_another():
   while True:

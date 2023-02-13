@@ -1,0 +1,11 @@
+import csv
+
+def get_file(csv_file):
+    with open(csv_file) as f:
+        file = csv.reader(f)
+        ip_address = list(file)
+
+        print(ip_address)
+
+csv_file = str(input(r"Please enter a file path: "))
+get_file(csv_file)
