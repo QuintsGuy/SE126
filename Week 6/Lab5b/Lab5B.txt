@@ -1,0 +1,73 @@
+Adam,Ake,509-999-9017,aake@roadrunner.com,MIS,Tech Support
+Aaron,Baker,231-315-6747,abaker@roadrunner.com,MIS,Tech Support
+Andre,Bond,317-905-0803,abond@roadrunner.com,MIS,Tech Support
+Adelaida,Bragg,864-391-5677,abragg@roadrunner.com,Homeowners,Sales
+Andrea,Breed,631-750-9612,abreed@roadrunner.com,Life,Sales
+Ann,Davis,314-890-3602,adavis@roadrunner.com,Homeowners,Sales
+Albert,Dulaney,281-716-2525,adulaney@roadrunner.com,MIS,Tech Support
+Amanda,Gallo,817-446-6134,agallo@roadrunner.com,MIS,Tech Support
+Amanda,Givens,530-685-9429,agivens@roadrunner.com,MIS,Tech Support
+Andra,Haywood,801-908-9835,ahaywood@roadrunner.com,Life,Sales
+Amalia,Hong,319-622-2854,ahong@roadrunner.com,Life,Sales
+Austin,Hunt,731-358-0276,ahunt@roadrunner.com,MIS,Tech Support
+Anna,Jennings,978-493-8797,ajennings@roadrunner.com,Homeowners,Sales
+Allene,Jim,620-643-8991,ajim@roadrunner.com,Life,Sales
+Anita,Johnson,843-774-7384,ajohnson@roadrunner.com,Life,Sales
+Amy,Jones,850-343-1563,ajones@roadrunner.com,Life,Sales
+Ashley,Lawson,215-497-4779,alawson@roadrunner.com,Transportation,Sales
+Amanda,Lopez,949-465-1850,alopez@roadrunner.com,Investments,Sales
+Amy,McClure,682-294-4325,amcclure@roadrunner.com,Transportation,Sales
+Antoine,McDaniel,336-362-4136,amcdaniel@roadrunner.com,Homeowners,Sales
+Alma,Moore,718-353-8402,amoore@roadrunner.com,MIS,Tech Support
+Alice,Oneil,715-208-1570,aoneil@roadrunner.com,MIS,Tech Support
+Anthony,Parker,217-345-5571,aparker@roadrunner.com,Transportation,Sales
+Alfredo,Richardson,404-461-6538,arichardson@roadrunner.com,Life,Sales
+Ann,Salas,270-784-1330,asalas@roadrunner.com,Life,Sales
+Arturo,Scott,407-262-9080,ascott@roadrunner.com,MIS,Tech Support
+April,Sexton,407-966-3327,asexton@roadrunner.com,Life,Sales
+Alice,Starr,501-733-9741,astarr@roadrunner.com,Life,Sales
+Adelina,Stephens,740-295-8392,astephens@roadrunner.com,Life,Sales
+Amber,Stevenson,805-637-3848,astevenson@roadrunner.com,Life,Sales
+Anne,Sumlin,830-986-4750,asumlin@roadrunner.com,Life,Sales
+Aimee,Vess,518-398-7384,avess@roadrunner.com,MIS,Tech Support
+Alberto,Williams,585-612-2926,awilliams@roadrunner.com,MIS,Tech Support
+Alberto,Wilson,562-879-5504,awilson@roadrunner.com,MIS,Tech Support
+Andrew,Workman,631-696-0484,aworkman@roadrunner.com,Homeowners,Sales
+Alex,Wright,870-554-4341,awright@roadrunner.com,MIS,Tech Support
+Belle,Archie,425-793-4038,barchie@roadrunner.com,Life,Sales
+Bill,Barnes,916-796-0453,bbarnes@roadrunner.com,Life,Sales
+Brittany,Buckles,502-474-2240,bbuckles@roadrunner.com,MIS,Tech Support
+Barbara,Channel,817-453-7713,bchannel@roadrunner.com,Life,Sales
+Brenda,Claire,585-820-2580,bclaire@roadrunner.com,MIS,Tech Support
+Bridgette,Cohen,914-449-8111,bcohen@roadrunner.com,MIS,Tech Support
+Bryanna,Coury,320-266-2805,bcoury@roadrunner.com,Life,Sales
+Barbara,Dinardo,731-335-1296,bdinardo@roadrunner.com,Life,Sales
+Brittany,Dodd,312-289-7435,bdodd@roadrunner.com,MIS,Tech Support
+Bruce,Gardiner,650-274-8285,bgardiner@roadrunner.com,Homeowners,Sales
+Bennie,Glover,734-591-6695,bglover@roadrunner.com,MIS,Tech Support
+Billy,Gomez,323-291-2766,bgomez@roadrunner.com,MIS,Tech Support
+Barbara,Hawthorne,541-337-3427,bhawthorne@roadrunner.com,MIS,Tech Support
+Barbara,Hittle,229-223-0590,bhittle@roadrunner.com,Life,Sales
+Beatrice,Hull,931-223-8591,bhull@roadrunner.com,Life,Sales
+Barbara,Lear,408-719-6524,blear@roadrunner.com,MIS,Tech Support
+Bethany,Lee,251-895-5491,blee@roadrunner.com,Life,Sales
+Brian,Lubin,361-331-0265,blubin@roadrunner.com,Life,Sales
+Barbara,Miller,907-733-7443,bmiller@roadrunner.com,Life,Sales
+Barbra,Poole,419-699-9983,bpoole@roadrunner.com,Investments,Sales
+Betty,Redfield,937-679-7960,bredfield@roadrunner.com,MIS,Tech Support
+Brian,Sanchez,812-820-9649,bsanchez@roadrunner.com,Life,Sales
+Billy,Stephens,863-635-9479,bstephens@roadrunner.com,MIS,Tech Support
+Bobby,Vest,508-992-7349,bvest@roadrunner.com,MIS,Tech Support
+Curtis,Alam,203-310-8008,calam@roadrunner.com,Transportation,Sales
+Cory,Beale,806-897-6616,cbeale@roadrunner.com,MIS,Tech Support
+Charles,Brendel,218-842-3853,cbrendel@roadrunner.com,MIS,Tech Support
+Cynthia,Bulluck,347-860-1078,cbulluck@roadrunner.com,Transportation,Sales
+Cherie,Calhoun,801-686-2733,ccalhoun@roadrunner.com,Life,Sales
+Christopher,Chase,708-926-6024,cchase@roadrunner.com,MIS,Tech Support
+Chieko,Cole,740-605-1701,ccole@roadrunner.com,Homeowners,Sales
+Caroline,Cox,417-536-6433,ccox@roadrunner.com,Life,Sales
+Chanda,Danley,201-619-2237,cdanley@roadrunner.com,Homeowners,Sales
+Corrine,Delgado,919-419-8909,cdelgado@roadrunner.com,Transportation,Sales
+Charles,Ellis,501-663-0138,cellis@roadrunner.com,Investments,Sales
+Clarence,Filer,586-572-1257,cfiler@roadrunner.com,Homeowners,Sales
+Cindy,Fleming,973-835-1441,cfleming@roadrunner.com,MIS,Tech Support
