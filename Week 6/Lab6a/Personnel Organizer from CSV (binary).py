@@ -62,18 +62,42 @@ def perform_an_action():
 def run_menu():
     print("Welcome to the actions menu!\n")
     print("1 -- Personnel Data Finder")
-    print("2 -- Change Personnel Email")
+    print("2 -- Validate Record Existence")
+    print("3 -- Change Personnel Email")
     while True:
         menu_selection = int(input('\nPlease select which action you would like to perform: '))
         if menu_selection == 1:
-            find_person()
+            find_person_sequential()
         elif menu_selection == 2:
+            find_person_binary()
+        elif menu_selection == 3:
             email_change()
         else:
             print('Invalid selection -- Please try again')
             continue
 
-def find_person():
+def find_person_binary():
+    searchName = input("Enter a person's last name: ").lower()
+
+    min = 0
+    max = len(last_name)
+    guess = int((min + max)/2)
+
+    while(searchName != last_name[guess].lower() and min <= max):
+        if (searchName < last_name[guess].lower()):
+            max = guess -1
+        else:
+            min = guess + 1
+        guess = int((min + max)/2)
+
+    if (searchName == last_name[guess].lower()):
+        print('Name is found.')
+    else:
+        print('Name is not found.')
+
+    perform_an_action()
+
+def find_person_sequential():
     look_up = input("Enter a person's last name: ").lower()
     for i in range(0, len(first_name)):
         if look_up == last_name[i].lower():
