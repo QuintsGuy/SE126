@@ -1,0 +1,48 @@
+import csv
+
+def display_spreadsheet():
+    size = len(first_name)
+    print('{:<15}{:<15}{:<30}{:<20}{:<15}'.format('Last', 'First', 'Department', 'Position', 'Annual Salary'))
+    for i in range(size):
+        print('{:<15}{:<15}{:<30}{:<20}{:<15}'.format(last_name[i], first_name[i], department[i], position[i], annual_salary[i]))
+
+def get_file(csv_file):
+    with open(csv_file) as f:
+        record=csv.reader(f)
+        record=list(record)
+        for row in record:
+            first_name.append(row[0])
+            last_name.append(row[1])
+            department.append(row[2])
+            position.append(row[3])
+            annual_salary.append(row[4])
+
+    display_spreadsheet()
+
+def swap(list, x):
+    temp = list[x]
+    list[x] = list[x+1]
+    list[x+1] = temp
+
+def sort_salary(list1, list2, list3, list4, list5):
+    for i in range(0, len(annual_salary)):
+        for r in range(0,len(annual_salary)):
+            if list5[r]<list5[r+1]:
+                swap(list1, r)
+                swap(list2, r)
+                swap(list3, r)
+                swap(list4, r)
+                swap(list5, r)
+    
+    display_spreadsheet()
+
+first_name=[]
+last_name=[]
+department=[]
+position=[]
+annual_salary=[]
+
+csv_file=str(input(r"Enter a file path: "))
+get_file(csv_file)
+
+sort_salary(first_name, last_name, department, position, annual_salary)
