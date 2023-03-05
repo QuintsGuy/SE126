@@ -1,10 +1,3 @@
-seats = []
-
-for i in range(15):
-    seats.append(['#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#',])
-
-assigned_seats = []
-
 def display_seats():
     print("{:^5}{:^58}".format("Row", "Seats"))
     print("{:^5}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}{:^2}".format("","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4"))
@@ -23,43 +16,108 @@ def assign_seat(row, col):
 def get_seat():
     seat = []
     while True:
-        row_var=int(input("\nEnter seat row (ex. 1-15): "))
-        try:
-            row_var = int(row_var)
+        while True:
+            row_var=input("\nEnter seat row (ex. 1-15): ")
+            try:
+                row_var = int(row_var)
+            except ValueError:
+                print("Invalid input -- try again")
+                continue
             break
-        except ValueError:
-            print("Invalid input -- try again")
-            continue
-    seat.append(row_var)
-    row = int(seat[0])-1
+        seat.append(row_var)
+        row = int(seat[0])-1
 
-    while True:            
-        col_var=input("\nEnter seat column (ex. A-Z or 1-4): ")
-        if isinstance(col_var, str) == True:
+        while True:            
+            col_var=input("Enter seat column (ex. A-Z or 1-4): ")
             try:
                 col_var=int(col_var)
-                break
             except ValueError:
-                break
+                col_var=str(col_var)
+            break
+            
+        seat.append(col_var)
+
+        if isinstance(seat[1], str) == True: 
+            seat[1].upper
+            col = ord(seat[1])-65
+        else:
+            col = int(seat[1])+25
+
+        if 0<=row<15 and 0<=col<30:
+            return (row, col)
+        else:
+            print("Invalid seat -- try again\n")
+            continue
+
+def purchase_tickets():
+    total_price = 0
+    requested_seats = []
+    number_of_tickets = int(input("\nHow many tickets would you like to purchase? "))
+    for i in range(number_of_tickets):
+        requested_seats.append((get_seat()))
+        
+        total_price += ticket_prices(requested_seats[i][0])
+    
+    print(f"\nThe total price for the {number_of_tickets} tickets requested is ${total_price}!")
+    while True:
+        option_response = input(f"Are you sure you want to purchase these tickets for ${total_price}? Y/N: ").upper()
+        
+        if isinstance(option_response, str) and option_response == "Y":
+            for i in range(number_of_tickets):
+                assign_seat(*requested_seats[i])
+            print(f"\nCongrats! You purchased {number_of_tickets} tickets!\n")
+            break
+
+        elif isinstance(option_response, str) and option_response == "N":
+            while True:
+                different_tickets=input("Would you like to purchase different tickets? Y/N: ").upper()
+                if isinstance(different_tickets, str) and different_tickets == "Y":
+                    purchase_tickets()
+                    break
+                elif isinstance(different_tickets, str) and different_tickets == "N":
+                    break
+                else:
+                    print("Invalid input -- try again")
+            break
+
         else:
             print("Invalid input -- try again")
-            continue
-    
-    seat.append(col_var)
-    print(seat)
+                    
+def ticket_prices(requested_seats):
+    ticket_price = 0
+    if 0<=requested_seats<5:
+        ticket_price+=200
+    elif 5<=requested_seats<10:
+        ticket_price+=175
+    elif 10<=requested_seats<15: 
+        ticket_price+=150
 
-    if isinstance(seat[1], str) == True: 
-        seat[1].upper
-        col = ord(seat[1])-65
-    else:
-        col = int(seat[1])+25
+    return ticket_price
 
-    if 0<=row<15 and 0<=col<30:
-        return (row, col)
-    else:
-        print("Invalid seat -- try again\n")
-        return None
-    
+def theater_details():
+    tickets_sold = len(assigned_seats)
+    tickets_available = 450 - len(assigned_seats)
+    print(f"\n{tickets_sold} tickets have been sold so far... there are {tickets_available} tickets left available\n")
+
+    while True:
+        open_seats_in_row = input("Would you like to check a row for available seating? Y/N: ").upper()
+        if isinstance(open_seats_in_row, str) and open_seats_in_row == "Y":
+            lookup_row = input("What row would you like to check for available seating (ex. 1-15): ")
+            try:
+                lookup_row = int(lookup_row)-1
+            except ValueError:
+                print("Invalid input -- try again")
+                continue
+            if 0<=lookup_row<15:
+                seats_available = 0
+                for i in seats[lookup_row]:
+                    if i == "#":
+                        seats_available += 1
+                print(f"There are {seats_available} seats available in row {lookup_row}.") 
+                break
+        if isinstance(open_seats_in_row, str) and open_seats_in_row == "N":
+            break    
+
 def assign_another():
     while True:
         check_again=input("\nDo you want to assign anymore seats? Y/N: ").upper()
@@ -74,16 +132,20 @@ def assign_another():
             return False
         else:
             print("Invalid input -- try again")
+    
+seats = []
+
+for i in range(15):
+    seats.append(['#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#',])
+
+assigned_seats = []
 
 display_seats()
 while len(assigned_seats) < 450:
-    seat = get_seat()
-    if seat == None:
+    theater_details()
+    purchase_tickets()
+    display_seats()
+    if assign_another():
         continue
     else:
-        if assign_seat(*seat):
-            display_seats()
-            if assign_another():
-                continue
-            else:
-                break
+        break
